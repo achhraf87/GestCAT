@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\GESTCAT.API.props" />
+</Project>

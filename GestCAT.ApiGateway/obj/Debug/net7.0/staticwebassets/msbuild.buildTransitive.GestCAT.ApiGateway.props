@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\GestCAT.ApiGateway.props" />
+</Project>

@@ -1,0 +1,12 @@
+C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.DOMAIN\bin\Debug\net7.0\GESTCAT.DOMAIN.deps.json
+C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.DOMAIN\bin\Debug\net7.0\GESTCAT.DOMAIN.dll
+C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.DOMAIN\bin\Debug\net7.0\GESTCAT.DOMAIN.pdb
+C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.DOMAIN\obj\Debug\net7.0\GESTCAT.DOMAIN.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.DOMAIN\obj\Debug\net7.0\GESTCAT.DOMAIN.AssemblyInfoInputs.cache
+C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.DOMAIN\obj\Debug\net7.0\GESTCAT.DOMAIN.AssemblyInfo.cs
+C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.DOMAIN\obj\Debug\net7.0\GESTCAT.DOMAIN.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.DOMAIN\obj\Debug\net7.0\GESTCAT.DOMAIN.dll
+C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.DOMAIN\obj\Debug\net7.0\refint\GESTCAT.DOMAIN.dll
+C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.DOMAIN\obj\Debug\net7.0\GESTCAT.DOMAIN.pdb
+C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.DOMAIN\obj\Debug\net7.0\ref\GESTCAT.DOMAIN.dll
+C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.DOMAIN\obj\Debug\net7.0\GESTCAT.DOMAIN.sourcelink.json

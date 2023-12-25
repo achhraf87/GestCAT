@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "1gm2px2ifzdwPk2gAzy4cwenZwTSKAhlQswfOv7FssI=",
+  "Source": "GestCAT.ApiGateway",
+  "BasePath": "_content/GestCAT.ApiGateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
