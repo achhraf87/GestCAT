@@ -19,6 +19,7 @@ builder.Services.AddHealthChecks()
     .AddCheck<ApiHealthCheck>(nameof(ApiHealthCheck))
     .AddDbContextCheck<AppDBContext>();
 //https://localhost:5031/healthchecks-ui#/healthchecks
+//okokokokoko
 
 builder.Services.
     AddHealthChecksUI(oprions =>
