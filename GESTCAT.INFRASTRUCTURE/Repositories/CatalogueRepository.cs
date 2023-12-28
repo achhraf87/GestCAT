@@ -23,14 +23,6 @@ namespace GESTCAT.INFRASTRUCTURE.Repositories
             List<Catalogue> allPosts = new List<Catalogue>();
             allPosts = includeCat ? await _dbContext.Catalogues.Include(x => x.Livre).ToListAsync() : await _dbContext.Catalogues.ToListAsync();
             return allPosts;
-            //if (includeCat)
-            //{
-            //    return await _dbContext.Catalogues.Include(x => x.LivreId).ToListAsync();
-            //}
-            //else
-            //{
-            //    return await _dbContext.Catalogues.ToListAsync();
-            //}
         }
 
         public async Task<Catalogue> GetCatalogueById(int id, bool includeCatalogue)

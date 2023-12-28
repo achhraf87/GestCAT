@@ -22,8 +22,8 @@ namespace GESTCAT.APPLICATION.Features.Cataloguee.Query.GetCatalogueList
         }
         public async Task<List<GetCatalogueListViewModel>> Handle(GetCatalogueListQuery request, CancellationToken cancellationToken)
         {
-            var allPosts = await _catRepository.GetAllCatalogue(true);
-            return _mapper.Map<List<GetCatalogueListViewModel>>(allPosts);
+            var catalogue = await _catRepository.GetAllCatalogue(true);
+            return _mapper.Map<List<GetCatalogueListViewModel>>(catalogue);
         }
     }
 }

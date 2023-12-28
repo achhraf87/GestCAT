@@ -5,6 +5,10 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using GESTCAT.API.HealthCheck;
 using HealthChecks.UI.Client;
+using MassTransit;
+using GESTCAT.API.Controllers;
+using GESTCAT.APPLICATION.Contracts;
+using GESTCAT.INFRASTRUCTURE.Repositories;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,8 +22,35 @@ builder.Services.AddHttpClient();
 builder.Services.AddHealthChecks()
     .AddCheck<ApiHealthCheck>(nameof(ApiHealthCheck))
     .AddDbContextCheck<AppDBContext>();
-//https://localhost:5031/healthchecks-ui#/healthchecks
-//okokokokoko
+
+builder.Services.AddScoped<ICatalogueRepository, CatalogueRepository>();
+builder.Services.AddScoped<ILivreRepository, LivreRepository>();
+builder.Services.AddScoped(typeof(IBaseRepository<>),typeof(BaseRepository<>));
+
+
+//builder.Services.AddMassTransit(x =>
+//{
+//    x.UsingRabbitMq((context, cfg) => cfg.ConfigureEndpoints(context));
+
+//    x.AddRider(rider =>
+//    {
+//        rider.AddConsumer<KafkaMessageConsumer>();
+
+//        rider.UsingKafka((context, k) =>
+//        {
+//            k.Host("localhost:9092");
+
+//            k.TopicEndpoint<KafkaMessage>("topic-name", "consumer-group-name", e =>
+//            {
+//                e.ConfigureConsumer<KafkaMessageConsumer>(context);
+//            });
+//        });
+//    });
+//});
+
+//builder.Services.AddMassTransitHostedService(true);
+
+
 
 builder.Services.
     AddHealthChecksUI(oprions =>
@@ -58,6 +89,21 @@ app.MapHealthChecks("/healthcheck", new()
 {
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
 });
-app.MapHealthChecksUI(options => options.UIPath = "/dashboard"); 
+app.MapHealthChecksUI(options => options.UIPath = "/dashboard");
+
 
 app.Run();
+
+//class KafkaMessageConsumer :
+//        IConsumer<KafkaMessage>
+//{
+//    public Task Consume(ConsumeContext<KafkaMessage> context)
+//    {
+//        return Task.CompletedTask;
+//    }
+//}
+
+//public record KafkaMessage
+//{
+//    public string Text { get; init; }
+//}

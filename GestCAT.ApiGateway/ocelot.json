@@ -4,42 +4,7 @@
   },
   "Routes": [
     {
-      "UpstreamPathTemplate": "/gateway/book",
-      "UpstreamHttpMethod": [ "Get" ],
-      "DownstreamPathTemplate": "/api/book",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5031
-        }
-      ]
-    },
-    {
-      "UpstreamPathTemplate": "/gateway/book/{id}",
-      "UpstreamHttpMethod": [ "Get", "Delete" ],
-      "DownstreamPathTemplate": "/api/book/{id}",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5031
-        }
-      ]
-    },
-    {
-      "UpstreamPathTemplate": "/gateway/book",
-      "UpstreamHttpMethod": [ "Post", "Put" ],
-      "DownstreamPathTemplate": "/api/book",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5031
-        }
-      ]
-    },
-    {
+
       "UpstreamPathTemplate": "/api/Catalog",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamPathTemplate": "/api/catalog",
@@ -52,7 +17,7 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/catalog/{id}",
+      "UpstreamPathTemplate": "/api/catalog/{id}",
       "UpstreamHttpMethod": [ "Get", "Delete" ],
       "DownstreamPathTemplate": "/api/catalog/{id}",
       "DownstreamScheme": "https",
@@ -64,9 +29,9 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/gateway/catalog",
-      "UpstreamHttpMethod": [ "Post", "Put" ],
-      "DownstreamPathTemplate": "/api/catalog",
+      "UpstreamPathTemplate": "/api/Livres",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Livres",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
