@@ -27,13 +27,6 @@ namespace GESTCAT.API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<CreateLivreCommand>> AjtLivre(CreateLivreCommand createLivreCommand)
-        {
-            int id = await _mediat.Send(createLivreCommand);
-            return Ok(id);
-        }
-
-        [HttpPost]
         public async Task<ActionResult<CreateCatalogueCommand>> AjtCat(CreateCatalogueCommand createCatalogueCommand)
         {
            int id = await _mediat.Send(createCatalogueCommand);

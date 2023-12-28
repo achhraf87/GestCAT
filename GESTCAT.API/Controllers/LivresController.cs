@@ -1,5 +1,6 @@
 ﻿using GESTCAT.APPLICATION.Features.Cataloguee.Query.GetCatalogList;
 using GESTCAT.APPLICATION.Features.Cataloguee.Query.GetCatalogueList;
+using GESTCAT.APPLICATION.Features.Livree.Commands.Create;
 using GESTCAT.APPLICATION.Features.Livree.Query.GetLivreList;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -22,6 +23,13 @@ namespace GESTCAT.API.Controllers
         {
             var dtos = await _mediator.Send(new GetCatalogueListQuery());
             return Ok(dtos);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<CreateLivreCommand>> AjtLivre(CreateLivreCommand createLivreCommand)
+        {
+            int id = await _mediator.Send(createLivreCommand);
+            return Ok(id);
         }
     }
 }
