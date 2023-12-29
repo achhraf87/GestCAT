@@ -15,6 +15,7 @@ using System.Net;
 using System.Reflection;
 using GESTCAT.API;
 using System.Threading.RateLimiting;
+using GESTCAT.API.RateLImitter;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,26 +23,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddRateLimiter(options =>
-{
-    options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(content =>
-    RateLimitPartition.GetFixedWindowLimiter(
-        partitionKey: content.Request.Headers.Host.ToString(),
-        factory: partition => new FixedWindowRateLimiterOptions
-        {
-            AutoReplenishment = true,
-            PermitLimit = 5,
-            QueueLimit = 0,
-            Window = TimeSpan.FromSeconds(10)
-        })
-
-    );
-
-    options.RejectionStatusCode = 429;
-
-});
-
+builder.Services.LimitterMesApi();
 builder.Services.AddInfraContainer(builder.Configuration);
 builder.Services.AddApplicationContainer();
 builder.Services.AddHttpClient();
@@ -51,7 +33,7 @@ builder.Services.AddHealthChecks()
 
 builder.Services.AddScoped<ICatalogueRepository, CatalogueRepository>();
 builder.Services.AddScoped<ILivreRepository, LivreRepository>();
-builder.Services.AddScoped(typeof(IBaseRepository<>),typeof(BaseRepository<>));
+builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 
 
 builder.Services.AddMassTransit(x =>
