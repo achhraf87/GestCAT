@@ -34,12 +34,6 @@ namespace GESTCAT.APPLICATION.Features.Livree.Query.GetLivreList
 
         public int? GenreId { get; set; }
 
-        public virtual ICollection<Catalogue> Catalogues { get; set; } = new List<Catalogue>();
-
-        public virtual Editeur? Editeur { get; set; }
-
-        public virtual Genre? Genre { get; set; }
-
-        public virtual ICollection<Historique> Historiques { get; set; } = new List<Historique>();
+       
     }
 }

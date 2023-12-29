@@ -1847,7 +1847,9 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "FluentValidation": "11.9.0",
           "GESTCAT.DOMAIN": "1.0.0",
-          "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0"
+          "MassTransit.Kafka": "8.1.3",
+          "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
+          "Microsoft.Extensions.Http": "7.0.0"
         },
         "compile": {
           "bin/placeholder/GESTCAT.APPLICATION.dll": {}

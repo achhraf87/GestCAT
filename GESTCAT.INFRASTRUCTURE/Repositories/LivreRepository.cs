@@ -21,9 +21,9 @@ namespace GESTCAT.INFRASTRUCTURE.Repositories
         {
             List<Livre> allLivre = new List<Livre>();
             allLivre = includeAll ? await _appDBContext.Livres.Include(x => x.Catalogues)
-                .Include(x=>x.Editeur)
-                .Include(x=>x.Couverture)
-                .Include(x=>x.Historiques)
+                .Include(x => x.Editeur)
+                .Include(x => x.Couverture)
+                .Include(x => x.Historiques)
                 .ToListAsync() : await _appDBContext.Livres.ToListAsync();
             return allLivre;
         }

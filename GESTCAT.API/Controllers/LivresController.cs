@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GESTCAT.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Livres")]
     [ApiController]
     public class LivresController : ControllerBase
     {

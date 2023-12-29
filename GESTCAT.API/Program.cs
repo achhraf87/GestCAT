@@ -9,6 +9,11 @@ using MassTransit;
 using GESTCAT.API.Controllers;
 using GESTCAT.APPLICATION.Contracts;
 using GESTCAT.INFRASTRUCTURE.Repositories;
+using GESTCAT.APPLICATION.Features.Cataloguee.Commands.Create.Consumers;
+using GESTCAT.APPLICATION.Features.Cataloguee.Commands.Create.Events;
+using System.Net;
+using System.Reflection;
+using GESTCAT.API;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,29 +33,38 @@ builder.Services.AddScoped<ILivreRepository, LivreRepository>();
 builder.Services.AddScoped(typeof(IBaseRepository<>),typeof(BaseRepository<>));
 
 
-//builder.Services.AddMassTransit(x =>
-//{
-//    x.UsingRabbitMq((context, cfg) => cfg.ConfigureEndpoints(context));
+builder.Services.AddMassTransit(x =>
+{
+    x.UsingRabbitMq((context, cfg) => cfg.ConfigureEndpoints(context));
 
-//    x.AddRider(rider =>
-//    {
-//        rider.AddConsumer<KafkaMessageConsumer>();
+    x.AddRider(rider =>
+    {
+        rider.AddConsumer<CatalogueCreatedEventConsumer>();
 
-//        rider.UsingKafka((context, k) =>
-//        {
-//            k.Host("localhost:9092");
+        rider.AddProducer<CatalogueDeletedEvent>(nameof(CatalogueDeletedEvent));
 
-//            k.TopicEndpoint<KafkaMessage>("topic-name", "consumer-group-name", e =>
-//            {
-//                e.ConfigureConsumer<KafkaMessageConsumer>(context);
-//            });
-//        });
-//    });
-//});
+        rider.UsingKafka((context, k) =>
+        {
+            k.Host("localhost:9092");
 
-//builder.Services.AddMassTransitHostedService(true);
+            k.TopicEndpoint<CatalogueCreatedEvent>(nameof(CatalogueCreatedEvent), GetUniqueNames.GetUniqueName(nameof(CatalogueCreatedEvent)), e =>
+            {
+                // e.AutoOffsetReset = AutoOffsetReset.Latest;
+                //e.ConcurrencyLimit = 3;
+                e.CheckpointInterval = TimeSpan.FromSeconds(10);
+                e.ConfigureConsumer<CatalogueCreatedEventConsumer>(context);
 
+                e.CreateIfMissing(t =>
+                {
+                    //t.NumPartitions = 2; //number of partitions
+                    //t.ReplicationFactor = 1; //number of replicas
+                });
+            });
+        });
+    });
+});
 
+builder.Services.AddMassTransitHostedService(true);
 
 builder.Services.
     AddHealthChecksUI(oprions =>
@@ -94,16 +108,3 @@ app.MapHealthChecksUI(options => options.UIPath = "/dashboard");
 
 app.Run();
 
-//class KafkaMessageConsumer :
-//        IConsumer<KafkaMessage>
-//{
-//    public Task Consume(ConsumeContext<KafkaMessage> context)
-//    {
-//        return Task.CompletedTask;
-//    }
-//}
-
-//public record KafkaMessage
-//{
-//    public string Text { get; init; }
-//}
