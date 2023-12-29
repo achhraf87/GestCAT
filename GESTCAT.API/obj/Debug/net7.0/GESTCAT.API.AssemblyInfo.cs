@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GESTCAT.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f16e1691edbd7e7595a767dad03a05873a866619")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e939081371d7810ca084213f0f65ad9043d477b7")]
 [assembly: System.Reflection.AssemblyProductAttribute("GESTCAT.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GESTCAT.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

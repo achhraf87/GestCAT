@@ -64,7 +64,7 @@ builder.Services.AddMassTransit(x =>
     });
 });
 
-builder.Services.AddMassTransitHostedService(true);
+//builder.Services.AddMassTransitHostedService(true);
 
 builder.Services.
     AddHealthChecksUI(oprions =>
