@@ -38,6 +38,8 @@ builder.Services.AddRateLimiter(options =>
 
     );
 
+    options.RejectionStatusCode = 429;
+
 });
 
 builder.Services.AddInfraContainer(builder.Configuration);
@@ -125,7 +127,6 @@ app.MapHealthChecks("/healthcheck", new()
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
 });
 app.MapHealthChecksUI(options => options.UIPath = "/dashboard");
-
 
 app.Run();
 

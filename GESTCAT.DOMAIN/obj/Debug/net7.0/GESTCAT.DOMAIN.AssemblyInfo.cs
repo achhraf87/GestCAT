@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GESTCAT.DOMAIN")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d650ca6f4e76b389eae041b0e8038597c1613c53")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+791f6dce1a6f59504dbeb9a53f47e2aa840d11ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("GESTCAT.DOMAIN")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GESTCAT.DOMAIN")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

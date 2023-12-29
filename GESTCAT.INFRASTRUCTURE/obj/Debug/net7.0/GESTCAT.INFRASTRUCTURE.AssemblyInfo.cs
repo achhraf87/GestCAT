@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GESTCAT.INFRASTRUCTURE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f16e1691edbd7e7595a767dad03a05873a866619")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+791f6dce1a6f59504dbeb9a53f47e2aa840d11ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("GESTCAT.INFRASTRUCTURE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GESTCAT.INFRASTRUCTURE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
