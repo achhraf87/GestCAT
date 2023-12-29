@@ -38,3 +38,4 @@ public partial class Livre
 
     public virtual ICollection<Historique> Historiques { get; set; } = new List<Historique>();
 }
+

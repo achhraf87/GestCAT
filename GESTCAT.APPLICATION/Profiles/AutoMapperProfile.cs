@@ -3,6 +3,7 @@ using GESTCAT.APPLICATION.Features.Cataloguee.Commands.Create;
 using GESTCAT.APPLICATION.Features.Cataloguee.Commands.Delete;
 using GESTCAT.APPLICATION.Features.Cataloguee.Commands.Update;
 using GESTCAT.APPLICATION.Features.Cataloguee.Query.GetCatalogueList;
+using GESTCAT.APPLICATION.Features.Livree.Query.GetLivreDetails;
 using GESTCAT.APPLICATION.Features.Livree.Query.GetLivreList;
 using GESTCAT.DOMAIN.Models;
 using System;
@@ -22,6 +23,7 @@ namespace GESTCAT.APPLICATION.Profiles
             CreateMap<Catalogue, UpdateCatalogueCommand>().ReverseMap();
             CreateMap<Catalogue, GetCatalogueListViewModel>().ReverseMap();
             CreateMap<Livre, GetLivreListViewModal>().ReverseMap();
+            CreateMap<Livre,GetLivreDetailViewModel>().ReverseMap();
     
         }
     }
