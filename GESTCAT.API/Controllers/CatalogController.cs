@@ -29,8 +29,6 @@ namespace GESTCAT.API.Controllers
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<IActionResult> PostAsync(string title)
         {
-            // Another way to access the _topicProducer
-            // var _topicProducer = HttpContext.RequestServices.GetRequiredService<ITopicProducer<VideoDeletedEvent>>();
 
             await _producer.Produce(new CatalogueDeletedEvent
             {

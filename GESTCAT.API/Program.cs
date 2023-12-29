@@ -14,6 +14,7 @@ using GESTCAT.APPLICATION.Features.Cataloguee.Commands.Create.Events;
 using System.Net;
 using System.Reflection;
 using GESTCAT.API;
+using System.Threading.RateLimiting;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,24 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddRateLimiter(options =>
+{
+    options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(content =>
+    RateLimitPartition.GetFixedWindowLimiter(
+        partitionKey: content.Request.Headers.Host.ToString(),
+        factory: partition => new FixedWindowRateLimiterOptions
+        {
+            AutoReplenishment = true,
+            PermitLimit = 5,
+            QueueLimit = 0,
+            Window = TimeSpan.FromSeconds(10)
+        })
+
+    );
+
+});
+
 builder.Services.AddInfraContainer(builder.Configuration);
 builder.Services.AddApplicationContainer();
 builder.Services.AddHttpClient();
@@ -96,6 +115,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseRateLimiter();
 
 app.UseRouting();
 
