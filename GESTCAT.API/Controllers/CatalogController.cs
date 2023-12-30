@@ -29,12 +29,10 @@ namespace GESTCAT.API.Controllers
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<IActionResult> PostAsync(string title)
         {
-
             await _producer.Produce(new CatalogueDeletedEvent
             {
                 Title = $"{title}"
             });
-
             return Ok(title);
         }
 
