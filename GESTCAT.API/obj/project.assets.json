@@ -198,6 +198,35 @@
           }
         }
       },
+      "Flurl/4.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Flurl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flurl.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Flurl.Http/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Flurl": "4.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Flurl.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Flurl.Http.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Fractions/7.2.1": {
         "type": "package",
         "compile": {
@@ -2068,6 +2097,43 @@
         "lib/netstandard2.0/FluentValidation.xml",
         "lib/netstandard2.1/FluentValidation.dll",
         "lib/netstandard2.1/FluentValidation.xml"
+      ]
+    },
+    "Flurl/4.0.0": {
+      "sha512": "rpts69yYgvJqg6PPgqShBQEZ4aNzWQqWpWppcT0oDWxDCIsBqiod4pj6LQZdhk+1OozLFagemldMRACdHF3CsA==",
+      "type": "package",
+      "path": "flurl/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "flurl.4.0.0.nupkg.sha512",
+        "flurl.nuspec",
+        "icon.png",
+        "lib/net461/Flurl.dll",
+        "lib/net461/Flurl.xml",
+        "lib/net472/Flurl.dll",
+        "lib/net472/Flurl.xml",
+        "lib/netstandard2.0/Flurl.dll",
+        "lib/netstandard2.0/Flurl.xml"
+      ]
+    },
+    "Flurl.Http/4.0.0": {
+      "sha512": "h/an1qLUfKiPs0f7y2v2OREmKozPShr8IIR26hCGuvffl+j52W9P0KE62jbqwfuxnlURDO0VqT1uyqgppd/hHw==",
+      "type": "package",
+      "path": "flurl.http/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "flurl.http.4.0.0.nupkg.sha512",
+        "flurl.http.nuspec",
+        "icon.png",
+        "lib/net461/Flurl.Http.dll",
+        "lib/net461/Flurl.Http.xml",
+        "lib/net6.0/Flurl.Http.dll",
+        "lib/net6.0/Flurl.Http.xml",
+        "lib/netstandard2.0/Flurl.Http.dll",
+        "lib/netstandard2.0/Flurl.Http.xml"
       ]
     },
     "Fractions/7.2.1": {
@@ -4894,6 +4960,8 @@
       "AspNetCore.HealthChecks.UI >= 7.0.2",
       "AspNetCore.HealthChecks.UI.Client >= 7.1.0",
       "AspNetCore.HealthChecks.UI.InMemory.Storage >= 7.0.0",
+      "Flurl >= 4.0.0",
+      "Flurl.Http >= 4.0.0",
       "GESTCAT.APPLICATION >= 1.0.0",
       "GESTCAT.INFRASTRUCTURE >= 1.0.0",
       "MassTransit >= 8.1.3",
@@ -4964,6 +5032,14 @@
           "AspNetCore.HealthChecks.UI.InMemory.Storage": {
             "target": "Package",
             "version": "[7.0.0, )"
+          },
+          "Flurl": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "Flurl.Http": {
+            "target": "Package",
+            "version": "[4.0.0, )"
           },
           "MassTransit": {
             "target": "Package",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nJooNDrM5kX/HdobV+tNR2VnQR45qnVHxxfnS8XwKJKMboHg2H1aREZAwaN1N7mHUJhcycTV7GjxW0Whc/yq7g==",
+  "dgSpecHash": "ZFoHTBTpzqEp4R2i7ls8BkPq+arOzNqpRFj1qUBYNF3EaohWfEFfdoX8x0aY8M2Z3svNQcNkfE+NuSny6RGBFg==",
   "success": true,
   "projectFilePath": "C:\\Users\\hp\\Desktop\\JBICatalog\\GestCAT\\GESTCAT.API\\GESTCAT.API.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,8 @@
     "C:\\Users\\hp\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\confluent.kafka\\2.3.0\\confluent.kafka.2.3.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\flurl\\4.0.0\\flurl.4.0.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\flurl.http\\4.0.0\\flurl.http.4.0.0.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\fractions\\7.2.1\\fractions.7.2.1.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\identitymodel\\5.2.0\\identitymodel.5.2.0.nupkg.sha512",

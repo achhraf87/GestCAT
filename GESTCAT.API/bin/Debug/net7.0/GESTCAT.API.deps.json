@@ -11,6 +11,8 @@
           "AspNetCore.HealthChecks.UI": "7.0.2",
           "AspNetCore.HealthChecks.UI.Client": "7.1.0",
           "AspNetCore.HealthChecks.UI.InMemory.Storage": "7.0.0",
+          "Flurl": "4.0.0",
+          "Flurl.Http": "4.0.0",
           "GESTCAT.APPLICATION": "1.0.0",
           "GESTCAT.INFRASTRUCTURE": "1.0.0",
           "MassTransit": "8.1.3",
@@ -163,6 +165,25 @@
           "lib/net7.0/FluentValidation.dll": {
             "assemblyVersion": "11.0.0.0",
             "fileVersion": "11.9.0.0"
+          }
+        }
+      },
+      "Flurl/4.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Flurl.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
+          }
+        }
+      },
+      "Flurl.Http/4.0.0": {
+        "dependencies": {
+          "Flurl": "4.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Flurl.Http.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.0.0"
           }
         }
       },
@@ -1226,6 +1247,20 @@
       "sha512": "sha512-VneVlTvwYDkfHV5av3QrQ0amALgrLX6LV94wlYyEsh0B/klJBW7C8y2eAtj5tOZ3jH6CAVpr4s1ZGgew/QWyig==",
       "path": "fluentvalidation/11.9.0",
       "hashPath": "fluentvalidation.11.9.0.nupkg.sha512"
+    },
+    "Flurl/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rpts69yYgvJqg6PPgqShBQEZ4aNzWQqWpWppcT0oDWxDCIsBqiod4pj6LQZdhk+1OozLFagemldMRACdHF3CsA==",
+      "path": "flurl/4.0.0",
+      "hashPath": "flurl.4.0.0.nupkg.sha512"
+    },
+    "Flurl.Http/4.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-h/an1qLUfKiPs0f7y2v2OREmKozPShr8IIR26hCGuvffl+j52W9P0KE62jbqwfuxnlURDO0VqT1uyqgppd/hHw==",
+      "path": "flurl.http/4.0.0",
+      "hashPath": "flurl.http.4.0.0.nupkg.sha512"
     },
     "Fractions/7.2.1": {
       "type": "package",

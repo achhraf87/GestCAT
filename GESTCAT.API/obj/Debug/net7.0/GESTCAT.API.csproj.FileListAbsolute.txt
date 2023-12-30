@@ -138,3 +138,5 @@ C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.API\bin\Debug\net7.0\runtimes\win
 C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.API\bin\Debug\net7.0\runtimes\win-x86\native\vcruntime140.dll
 C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.API\bin\Debug\net7.0\runtimes\win-x86\native\zlib1.dll
 C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.API\bin\Debug\net7.0\runtimes\win-x86\native\zstd.dll
+C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.API\bin\Debug\net7.0\Flurl.dll
+C:\Users\hp\Desktop\JBICatalog\GestCAT\GESTCAT.API\bin\Debug\net7.0\Flurl.Http.dll

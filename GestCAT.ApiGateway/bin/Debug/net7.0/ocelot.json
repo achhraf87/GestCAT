@@ -18,7 +18,7 @@
     },
     {
       "UpstreamPathTemplate": "/api/catalog/{id}",
-      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "UpstreamHttpMethod": [ "Get" ],
       "DownstreamPathTemplate": "/api/catalog/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [

@@ -1,4 +1,6 @@
-﻿using GESTCAT.APPLICATION.Contracts;
+﻿using Flurl.Http;
+using Flurl;
+using GESTCAT.APPLICATION.Contracts;
 using GESTCAT.APPLICATION.Features.Cataloguee.Commands.Create;
 using GESTCAT.APPLICATION.Features.Cataloguee.Commands.Create.Events;
 using GESTCAT.APPLICATION.Features.Cataloguee.Query.GetCatalogList;
@@ -10,6 +12,10 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using GESTCAT.DOMAIN.Models;
+using MassTransit.Mediator;
+using GESTCAT.APPLICATION.Features.Cataloguee.Query.GetCatalogueDetails;
+using GESTCAT.APPLICATION.Features.Cataloguee.Query.GetCatalogDetails;
 
 namespace GESTCAT.API.Controllers
 {
@@ -17,9 +23,9 @@ namespace GESTCAT.API.Controllers
     [ApiController]
     public class CatalogController : ControllerBase
     {
-        private readonly IMediator _mediat;
+        private readonly MediatR.IMediator _mediat;
         private readonly ITopicProducer<CatalogueDeletedEvent> _producer;
-        public CatalogController(IMediator mediat, ITopicProducer<CatalogueDeletedEvent> producer)
+        public CatalogController(MediatR.IMediator mediat, ITopicProducer<CatalogueDeletedEvent> producer)
         {
             _mediat = mediat;
             _producer = producer;
@@ -49,5 +55,14 @@ namespace GESTCAT.API.Controllers
            int id = await _mediat.Send(createCatalogueCommand);
            return Ok(id);
         }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<GetCatalogueDetailViewModel>> GetPostById(int id)
+        {
+            var getCatDetailQuery = new GetCatalogueDetailQuery() { Id = id };
+            return Ok(await _mediat.Send(getCatDetailQuery));
+        }
+
+
     }
 }

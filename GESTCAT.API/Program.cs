@@ -16,6 +16,7 @@ using System.Reflection;
 using GESTCAT.API;
 using System.Threading.RateLimiting;
 using GESTCAT.API.RateLImitter;
+using Flurl.Http;
 
 
 var builder = WebApplication.CreateBuilder(args);
